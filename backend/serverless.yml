@@ -30,9 +30,27 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - codedeploy:*
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
       Resource:
         - '*'
+
+custom:
+  documentation:
+    api:
+      info:
+        version: v1.0.0
+        title: Serverless TODO App
+        description: Serverless TODO Application
+    models:
+      - name: CreateTodo
+        contentType: application/json
+        schema: ${file(models/create-todo-request.json)}
+      - name: UpdateTodo
+        contentType: application/json
+        schema: ${file(models/update-todo-request.json)}
+
+
 
 functions:
   Auth:

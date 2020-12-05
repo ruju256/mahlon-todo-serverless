@@ -24,7 +24,7 @@ export const handler = middy(
           'Access-Control-Allow-Credentials': true
         },
         body: JSON.stringify({
-          newItem
+          item: newItem
         })
       }
     } catch (e) {
