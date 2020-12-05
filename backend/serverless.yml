@@ -92,6 +92,11 @@ functions:
           method: post
           path: todos
           reqValidatorName: RequestBodyValidator
+          documentation:
+            summary: Create a new ToDo item
+            description: Create a new ToDo item
+            requestModels:
+              'application/json': CreateTodo
 
     iamRoleStatements:
       - Effect: Allow
@@ -114,6 +119,11 @@ functions:
           method: patch
           path: todos/{todoId}
           reqValidatorName: RequestBodyValidator
+          documentation:
+            summary: Update a ToDo item
+            description: Update ToDo item
+            requestModels:
+              'application/json': UpdateTodo
 
     iamRoleStatements:
       - Effect: Allow
